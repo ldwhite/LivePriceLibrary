@@ -17,9 +17,9 @@ df = pd.DataFrame(data, index=[now])
 if __name__ == "__main__":
     df.to_csv('data.csv')
     def save_data():
-        with open(r'data.csv', 'a', newline='') as csvfile:
+        with open(r'data.csv', 'a', newline = '') as csvfile:
             fieldnames = ['Time', 'Price']
-            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            writer = csv.DictWriter(csvfile, fieldnames = fieldnames)
 
             writer.writerow({'Time': now, 'Price': price})
 
