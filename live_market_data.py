@@ -12,9 +12,11 @@ now = str(datetime.now())
 data = {
     'Price':price
 }
-print(data)
+
+df = pd.DataFrame(data, index=[now])
 
 if __name__ == "__main__":
+    df.to_csv('data.csv')
     def save_data():
         with open(r'data.csv', 'a', newline='') as csvfile:
             fieldnames = ['Time', 'Price']
@@ -27,7 +29,6 @@ if __name__ == "__main__":
         now = str(datetime.now())
         price = si.get_live_price('AAPL')
         save_data()
-        print(now)
         print(price)
 
         time.sleep(10)
