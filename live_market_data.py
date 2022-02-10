@@ -14,22 +14,20 @@ data = {
 }
 print(data)
 
-df = pd.DataFrame(data, index=[now])
-df.to_csv('data.csv')
+if __name__ == "__main__":
+    def save_data():
+        with open(r'data.csv', 'a', newline='') as csvfile:
+            fieldnames = ['Time', 'Price']
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
-def save_data():
-    with open(r'data.csv', 'a', newline='') as csvfile:
-        fieldnames = ['Time','Price']
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-
-        writer.writerow({'Time':now, 'Price':price})
+            writer.writerow({'Time': now, 'Price': price})
 
 
-while True:
-    now = str(datetime.now())
-    price = si.get_live_price('AAPL')
-    save_data()
-    print(now)
-    print(price)
+    while True:
+        now = str(datetime.now())
+        price = si.get_live_price('AAPL')
+        save_data()
+        print(now)
+        print(price)
 
-    time.sleep(10)
+        time.sleep(10)
