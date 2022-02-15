@@ -1,4 +1,4 @@
-# Live Market Data
+# Live Price Library
 
 <p align="center">
 <img src = "https://github.com/ldwhite/Live_Market_Data/blob/main/images/stock_market.gif" style = "width:50%" />
